@@ -1,0 +1,34 @@
+This file describes how to run the code.
+First, I assume you have Anaconda on your computer. Otherwise, download and install Anaconda.
+Then, we will create a new environment with the Python version I used, like this:
+
+conda create -n dv python=3.11
+
+Then we will enter the environment: 
+
+conda activate dv
+
+Now we will install the relevant packages to run the code: 
+
+pip install numpy scikit-learn torch matplotlib easyocr tqdm pyspellchecker rapidfuzz transformers pandas evaluate datasets
+
+Next, we will place the run.py file in the folder that will contain it and the folder that we will run to run the classification on 
+(for example, if the folder containing the images is called "Images",
+then we will create a folder that contains the run.py file and the "Images" folder and there we will run run.py). 
+We will run the code like this: 
+
+python run.py Images
+
+where "Images" is the name of the folder where the images that we want to classify are stored (in the example above, this is the "Images" folder)
+
+**************************************************************************************************************************************************************
+Below are brief explanations of the other files I uploaded and worked with during the assignment:
+**************************************************************************************************************************************************************
+
+evaluate_pics.py - This script evaluates OCR quality on images in a folder using EasyOCR under different processing modes (raw and flipped and their variants), reporting average confidence scores and the percentage of images with no detected text.
+extract_text.py - This script performs OCR on images in alcohol and non-alcohol folders using multiple visual variants per image, selects the highest-confidence text, and saves the results to text files.
+preprocess_text.py - This script loads OCR results from text files, filters out low-score entries, cleans the text, labels them as alcohol or non-alcohol, and exports the results to a CSV file for classification.
+train_net.py - This script fine-tunes a DistilBERT model to classify OCR-extracted text as either alcohol or non-alcohol, using a labeled CSV, and evaluates the model with precision, recall, and F1 scores on both training and validation sets.
+upload.py - This script loads a fine-tuned classification model and tokenizer from the local "alcohol_net" directory and uploads them to the Hugging Face Hub under the specified username and repository name.
+inference.py - This script loads a fine-tuned transformer model and evaluates both pure neural network predictions and hybrid predictions (fuzzy keyword + NN fallback) on OCR text data, comparing their performance using classification metrics.
+run.py - This script classifies images as alcohol or non-alcohol by extracting text using OCR (with image variants), applying fuzzy keyword matching, and falling back to a neural network when needed, then saves the results to a CSV file.
