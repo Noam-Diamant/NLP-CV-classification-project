@@ -27,6 +27,9 @@ This project simulates a real-world classification problem: given a set of image
   - Character recognition errors with numbers appearing instead of letters
   - Irrelevant text content that could confuse classification
 
+### Image Processing Solutions
+To address image-level challenges, a comprehensive preprocessing pipeline was developed:
+- 
 
 ### Methodology
 - **Text Extraction:** Used EasyOCR to extract text from each image.
@@ -73,15 +76,7 @@ image2.jpg,nonalcohol
 ### Notes
 - The pipeline is CPU-only and does not require a GPU.
 
-Data Exploration and Problem Identification
-The initial data exploration revealed several challenging issues that needed to be addressed:
 
-Inverted/flipped images with upside-down or mirrored text
-Poor text-background contrast where text color was too similar to background
-Text visibility issues with blurred or unclear text
-Word splitting/merging errors (e.g., "wat er" instead of "water")
-Character recognition errors with numbers appearing instead of letters
-Irrelevant text content that could confuse classification
 
 Image Processing Solutions
 To address image-level challenges, a comprehensive preprocessing pipeline was developed:
