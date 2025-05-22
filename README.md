@@ -14,7 +14,31 @@ This project simulates a real-world classification problem: given a set of image
 ### Dataset
 - A set of images containing text, split into two folders: `Alcohol` and `Non-alcohol`, based on whether the text mentions alcohol.
 
-## 2. Main Analysis (Summary of Report)
+## 2. How to Run
+
+### Prerequisites
+- Python 3.11
+- Install dependencies:
+  ```bash
+  pip install -r requirements.txt
+  ```
+
+### Running the Classifier
+1. Place your images in a folder (e.g., `Images/`).
+2. Run the main script to classify images:
+   ```bash
+   python run.py Images
+   ```
+3. The script will output a `results.csv` file with two columns: `file_name` and `prediction` (either `alcohol` or `nonalcohol`).
+
+### Example Output
+```
+file_name,prediction
+image1.jpg,alcohol
+image2.jpg,nonalcohol
+```
+
+## 3. Main Analysis
 
 ### Data Exploration and Problem Identification
 - The dataset consists of images with superimposed text, divided into `Alcohol` and `Non-alcohol` categories.
@@ -58,29 +82,5 @@ The final pipeline showed significant improvements across all metrics:
 
 The majority of development time was invested in image processing and text extraction optimization, which proved critical for achieving good classification results.
 
-## 3. How to Run
-
-### Prerequisites
-- Python 3.11
-- Install dependencies:
-  ```bash
-  pip install -r requirements.txt
-  ```
-
-### Running the Classifier
-1. Place your images in a folder (e.g., `Images/`).
-2. Run the main script to classify images:
-   ```bash
-   python run.py Images
-   ```
-3. The script will output a `results.csv` file with two columns: `file_name` and `prediction` (either `alcohol` or `nonalcohol`).
-
-### Example Output
-```
-file_name,prediction
-image1.jpg,alcohol
-image2.jpg,nonalcohol
-```
-
-### Notes
+#### Notes
 - The pipeline is CPU-only and does not require a GPU.
