@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-This project simulates a real-world classification problem: given a set of images, the goal is to build a classifier that detects images containing superimposed text related to alcoholic beverages. The pipeline involves data exploration, analysis, and the construction of a robust classification system that achieves strong performance metrics. The classifier's performance may be evaluated on an unseen test set.
+This project simulates a real-world classification problem: given a set of images, the goal is to build a classifier that detects images containing superimposed text related to alcoholic beverages. The pipeline involves data exploration, analysis, and the construction of a robust classification system that achieves strong performance metrics.
 
 ### Background
 DoubleVerify's Universal Content Intelligence is an online classification engine that powers expansive content categorization, analyzing visual, audio, text, and other content types across all channels, devices, and formats. This project focuses on building a component for text extraction (OCR) and text-based classification for alcohol references in images.
